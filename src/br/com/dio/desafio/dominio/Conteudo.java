@@ -1,5 +1,14 @@
 package br.com.dio.desafio.dominio;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.time.LocalDate;
+
+@Getter
+@Setter
+@ToString
 public abstract class Conteudo {
 
     protected static final double XP_PADRAO = 10d;
@@ -7,21 +16,13 @@ public abstract class Conteudo {
     private String titulo;
     private String descricao;
 
-    public abstract double calcularXp();
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
+    public Conteudo(String titulo, String descricao) {
         this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public abstract double calcularXp();
+
+
+
 }
